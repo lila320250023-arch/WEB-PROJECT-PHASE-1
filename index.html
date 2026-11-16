@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join E-JUST student service queues online with JustWait.">
+  <title>JustWait – Student Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="JustWait home">
+    <span class="brand-mark">Q</span>
+    <span><strong>JustWait</strong><small>Student Services</small></span>
+  </a>
+  <nav class="header-actions" aria-label="Main navigation">
+    <span class="status">Virtual queues</span>
+    <a class="staff" href="login.html">Staff sign in</a>
+  </nav>
+</header>
+
+<main class="hero">
+  <span class="pill">✦ Welcome to JustWait</span>
+  <h1>How can we help today?</h1>
+  <p class="lead">Join a virtual queue and spend less time waiting in line. We'll keep your place while you get on with your day.</p>
+  <p id="home-message" class="form-message" role="status">Loading available services…</p>
+  <section id="services" class="grid" aria-label="Available services"></section>
+  <p class="help"><strong>Not sure where to go?</strong> Student Affairs can help point you in the right direction.</p>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>

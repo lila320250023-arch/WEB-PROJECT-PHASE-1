@@ -1,0 +1,169 @@
+/* JustWait – shared stylesheet (all pages)
+   Sections: 1 tokens, 2 base, 3 header, 4 home, 5 cards, 6 form pages, 7 buttons, 8 responsive */
+
+/* 1. Design tokens */
+:root {
+  --bg: #f8f7f5; --card: #fff; --ink: #18213d; --muted: #667085;
+  --line: #e6e3de; --coral: #e8604f; --green: #1f8a5b;
+  --accent: var(--coral); --tint: #fdecea;   /* overridden per service card */
+}
+
+/* 2. Base */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round; }
+
+/* 3. Header */
+.site-header { display: flex; justify-content: space-between; align-items: center;
+  padding: 20px max(20px, 6vw); border-bottom: 1px solid var(--line); }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand-mark { width: 45px; height: 45px; border-radius: 12px; background: var(--coral); color: #fff;
+  display: grid; place-items: center; font-weight: 800; box-shadow: 0 6px 14px rgba(232,96,79,.35); }
+.brand strong { display: block; line-height: 1.1; font-size: 18px; }
+.brand small { font-size: 12px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.header-actions { display: flex; gap: 28px; align-items: center; color: var(--muted); font-size: 15px; }
+.status::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green); margin-right: 8px; }
+.staff { color: var(--ink); font-weight: 600; font-size: 17px; display: flex; gap: 8px; align-items: center; }
+
+/* 4. Home hero */
+.hero { text-align: center; padding: 72px max(20px, 4vw) 48px;
+  background: radial-gradient(circle at 85% 0, #fdeee6 0, transparent 40%); }
+.pill { display: inline-block; padding: 6px 16px; border-radius: 99px; background: #fdecea;
+  color: var(--coral); font-weight: 600; font-size: 14px; }
+h1 { margin: 24px 0 16px; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: -.04em; line-height: 1.1; }
+.lead { max-width: 640px; margin: 0 auto 56px; color: var(--muted); font-size: 18px; }
+.help { margin-top: 40px; color: var(--muted); font-size: 15px; }
+.help strong { color: var(--ink); }
+
+/* 5. Service cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; max-width: 1330px; margin: 0 auto; text-align: left; }
+.card { background: var(--card); border-radius: 22px; border-top: 4px solid var(--accent);
+  padding: 28px 30px 30px; box-shadow: 0 10px 30px rgba(24,33,61,.08);
+  display: flex; flex-direction: column; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.icon { width: 56px; height: 56px; border-radius: 14px; background: var(--tint); color: var(--accent);
+  display: grid; place-items: center; font-size: 26px; }
+.open { padding: 5px 14px; border-radius: 99px; background: #e8f5ee; color: var(--green);
+  font-size: 14px; font-weight: 600; }
+.open::before { content: "● "; font-size: 10px; }
+.card h2 { margin: 24px 0 8px; font-size: 24px; letter-spacing: -.02em; }
+.card > p { margin: 0 0 20px; color: var(--muted); min-height: 52px; }
+.card label { font-size: 13px; font-weight: 600; }
+.stats { display: flex; margin-top: auto; padding: 20px 0; border-top: 1px solid var(--line); }
+.stats div { flex: 1; display: flex; flex-direction: column; }
+.stats div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+.stats b { font-size: 26px; letter-spacing: -.02em; }
+.stats span { font-size: 13px; color: var(--muted); }
+
+/* 6. Form pages (join + ticket) */
+.page { max-width: 1160px; margin: 0 auto; padding: 40px max(20px, 4vw) 80px; }
+.back { display: inline-flex; gap: 8px; align-items: center; font-weight: 600; font-size: 15px; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 90px; margin-top: 40px; align-items: start; }
+.eyebrow { color: var(--coral); font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.split h1 { margin-top: 12px; font-size: clamp(2rem, 4vw, 3rem); }
+.split .lead { margin: 0 0 32px; font-size: 17px; }
+.field { margin-bottom: 20px; }
+.field-head { display: flex; justify-content: space-between; font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+.field-head small { color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+input, select { width: 100%; padding: 18px 20px; font: inherit; border: 1px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink); }
+input:focus, select:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 4px rgba(232,96,79,.18); }
+.hint { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.error { color: #c0392b; font-size: 13px; margin: 6px 0 0; min-height: 1em; }
+.privacy { text-align: center; font-size: 13px; color: var(--muted); }
+.summary { background: var(--card); border-radius: 22px; padding: 30px; box-shadow: 0 10px 30px rgba(24,33,61,.08); }
+.summary h2 { margin: 6px 0 20px; font-size: 26px; }
+.summary dl { margin: 0; }
+.row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0;
+  border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.row b { font-size: 22px; color: var(--ink); }
+.big { font-size: clamp(3rem, 9vw, 5rem); font-weight: 800; letter-spacing: -.04em; color: var(--accent); margin: 12px 0; }
+
+/* 7. Buttons */
+.btn { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%;
+  padding: 17px; border: 0; border-radius: 12px; background: var(--ink); color: #fff;
+  font: 600 16px Inter, system-ui, sans-serif; cursor: pointer; }
+.btn:hover { background: #243055; }
+.btn[aria-disabled="true"] { background: #dfe1e6; color: #9aa1ad; pointer-events: none; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); margin-top: 12px; }
+
+/* 8. Responsive */
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; gap: 32px; }
+  .header-actions .status { display: none; }
+  .hero { padding-top: 48px; }
+}
+
+/* 9. Staff pages (login + dashboard) */
+.login-box { max-width: 440px; margin: 40px auto; 
+  background: var(--card); border-radius: 22px;
+  padding: 36px; box-shadow: 0 10px 30px rgba(24,33,61,.08); }
+.login-box h1 { font-size: 2rem; margin: 8px 0 24px; }
+.toolbar { display: flex; justify-content: space-between; 
+  align-items: center; gap: 16px; flex-wrap: wrap; }
+.toolbar .btn { width: auto; padding: 12px 22px; }
+.notice { background: #e8f5ee; color: var(--green); padding: 14px 18px; border-radius: 12px; margin: 24px 0; font-weight: 600; }
+.panel { background: var(--card); border-radius: 18px; padding: 24px; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(24,33,61,.06); }
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.panel-head h2 { margin: 0; font-size: 20px; }
+.panel-head .btn { width: auto; padding: 10px 20px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 8px; border-top: 1px solid var(--line); }
+th { color: var(--muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-top: 0; }
+
+
+/* 10. JustWait live application additions */
+[hidden] { display: none !important; }
+button, input, select { font: inherit; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+.muted { color: var(--muted); }
+.page-title { margin: 8px 0 12px; font-size: clamp(2rem, 4vw, 2.8rem); }
+.hero .lead { margin-bottom: 42px; }
+.card .advisor-select { margin: 12px 0 18px; padding: 12px 14px; }
+.card .btn { margin-top: 18px; }
+.card .btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+.stats .stat-value { overflow-wrap: anywhere; }
+.form-message { margin: 12px 0; font-size: 14px; }
+.form-message.error { color: #c0392b; }
+.form-message.success { color: var(--green); }
+.auth-switch { display: flex; gap: 10px; margin: 18px 0 22px; }
+.auth-switch button { flex: 1; border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fff; color: var(--ink); cursor: pointer; font-weight: 600; }
+.auth-switch button[aria-pressed="true"] { border-color: var(--coral); background: #fdecea; color: #b84537; }
+.ticket-card { max-width: 650px; margin: 30px auto; }
+.ticket-number { font-size: clamp(3.5rem, 10vw, 5.5rem); font-weight: 800; letter-spacing: -.05em; color: var(--accent); line-height: 1.05; overflow-wrap: anywhere; }
+.ticket-status { display: inline-flex; padding: 7px 14px; border-radius: 99px; background: #e8f5ee; color: var(--green); font-weight: 700; font-size: 14px; }
+.ticket-status[data-status="Completed"] { background: #e8f1fb; color: #315e91; }
+.ticket-status[data-status="Absent"] { background: #f2eeee; color: #6d5960; }
+.ticket-status[data-status="Skipped"] { background: #fff3dc; color: #946515; }
+.ticket-meta { margin: 22px 0; }
+.ticket-meta .row b { font-size: 17px; text-align: right; }
+.toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.panel .panel-head { gap: 16px; flex-wrap: wrap; }
+.panel .queue-count { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+.table-wrap { overflow-x: auto; }
+table { min-width: 580px; }
+.action-buttons { display: flex; flex-wrap: wrap; gap: 7px; }
+.btn.small { width: auto; padding: 8px 12px; border-radius: 9px; font-size: 13px; }
+.btn.small.secondary { background: #e8f1fb; color: #315e91; }
+.btn.small.warning { background: #fff3dc; color: #946515; }
+.btn.small.neutral { background: #f2eeee; color: #6d5960; }
+.empty-state { text-align: center; padding: 24px; color: var(--muted); }
+.staff-identity { color: var(--muted); font-size: 14px; }
+.info-note { background: #fff7e9; color: #76551c; border: 1px solid #f1dfbd; border-radius: 12px; padding: 12px 14px; font-size: 13px; }
+.loading { color: var(--muted); padding: 18px 0; }
+@media (max-width: 600px) {
+  .site-header { padding: 14px 18px; }
+  .header-actions { gap: 12px; }
+  .staff { font-size: 14px; }
+  .hero { padding-left: 18px; padding-right: 18px; }
+  .card { padding: 22px; }
+  .login-box { margin: 20px auto; padding: 26px 22px; }
+  .toolbar { align-items: flex-start; }
+  .toolbar-actions { width: 100%; }
+}

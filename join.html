@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join a queue – JustWait</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="join">
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="JustWait home">
+    <span class="brand-mark">Q</span>
+    <span><strong>JustWait</strong><small>Student Services</small></span>
+  </a>
+  <nav class="header-actions" aria-label="Main navigation">
+    <span class="status">Virtual queues</span>
+    <a class="staff" href="login.html">Staff sign in</a>
+  </nav>
+</header>
+
+<main class="page">
+  <a class="back" href="index.html">← Back to services</a>
+  <div class="split">
+    <section>
+      <p class="eyebrow">Join a virtual queue</p>
+      <h1 class="page-title" id="join-title">Join the queue</h1>
+      <p class="lead">Sign in or create your student account to receive a ticket.</p>
+
+      <div class="auth-switch" role="group" aria-label="Student account option">
+        <button type="button" id="register-mode" aria-pressed="true">Create account</button>
+        <button type="button" id="login-mode" aria-pressed="false">I already have an account</button>
+      </div>
+
+      <form id="join-form" novalidate>
+        <div class="field" id="name-field">
+          <div class="field-head"><label for="name">Full name</label><small>REQUIRED</small></div>
+          <input id="name" type="text" placeholder="Enter your full name" autocomplete="name" maxlength="100">
+        </div>
+        <div class="field">
+          <div class="field-head"><label for="sid">Student ID</label><small>REQUIRED</small></div>
+          <input id="sid" type="text" placeholder="Enter your student ID" autocomplete="username" maxlength="40" required>
+        </div>
+        <div class="field">
+          <div class="field-head"><label for="student-password">Password</label><small>REQUIRED</small></div>
+          <input id="student-password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+        </div>
+        <p class="info-note">For this course-project prototype, student IDs are accepted as entered and are not verified against E-JUST records. Use fictional test details for demonstrations.</p>
+        <p id="join-message" class="form-message" role="alert"></p>
+        <button class="btn" id="join-submit" type="submit">Create account and join →</button>
+      </form>
+    </section>
+
+    <aside class="summary" aria-label="Queue summary">
+      <span class="icon" id="summary-icon">Q</span>
+      <p class="eyebrow" style="margin-top:24px">You're joining</p>
+      <h2 id="service-title">Loading…</h2>
+      <div class="row"><span>People waiting</span><b id="waiting">—</b></div>
+      <div class="row"><span>Currently serving</span><b id="serving">—</b></div>
+      <p class="hint" id="queue-note">Queue information updates automatically.</p>
+    </aside>
+  </div>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>

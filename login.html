@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff sign in – JustWait</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="JustWait home">
+    <span class="brand-mark">Q</span>
+    <span><strong>JustWait</strong><small>Student Services</small></span>
+  </a>
+  <nav class="header-actions" aria-label="Main navigation">
+    <span class="status">Virtual queues</span>
+    <a class="staff" href="login.html">Staff sign in</a>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="login-box">
+    <p class="eyebrow">Staff area</p>
+    <h1>Staff sign in</h1>
+    <p class="lead" style="margin:0 0 24px;font-size:15px">Sign in with your assigned JustWait staff account.</p>
+    <form id="login-form" novalidate>
+      <div class="field">
+        <div class="field-head"><label for="email">Email</label></div>
+        <input id="email" type="email" placeholder="name@example.com" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <div class="field-head"><label for="password">Password</label></div>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p id="login-error" class="form-message error" role="alert"></p>
+      <button class="btn" id="login-submit" type="submit">Sign in →</button>
+    </form>
+    <p class="hint">Demo staff credentials are listed in the project's README.md.</p>
+  </section>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
